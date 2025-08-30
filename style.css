@@ -1,0 +1,166 @@
+/* Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #4cafef;
+}
+
+/* Status Message */
+#status {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Game Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #2e2e3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  background-color: #3c3c50;
+}
+
+.winner {
+  background-color: #4caf50 !important;
+  color: #fff;
+}
+
+/* Restart Button */
+#restartBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4cafef;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#restartBtn:hover {
+  background-color: #3b9edf;
+}
+
+/* Controls and Scoreboard */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+#undoBtn, #redoBtn, #themeToggle {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #4cafef;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#undoBtn:hover, #redoBtn:hover, #themeToggle:hover {
+  background-color: #3b9edf;
+}
+
+/* Animations */
+.cell.animated {
+  animation: pop 0.2s;
+}
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Light Theme */
+.light-theme body {
+  background-color: #f4f4f4;
+  color: #222;
+}
+.light-theme .cell {
+  background-color: #fff;
+  color: #222;
+}
+.light-theme .winner {
+  background-color: #ffe082 !important;
+  color: #222;
+}
+.light-theme #restartBtn, .light-theme #undoBtn, .light-theme #redoBtn, .light-theme #themeToggle {
+  background-color: #ffe082;
+  color: #222;
+}
+.light-theme #restartBtn:hover, .light-theme #undoBtn:hover, .light-theme #redoBtn:hover, .light-theme #themeToggle:hover {
+  background-color: #ffd54f;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  .container {
+    max-width: 98vw;
+  }
+  .cell {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}

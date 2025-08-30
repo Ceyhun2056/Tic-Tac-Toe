@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <div class="controls">
+      <label for="boardSize">Board Size:</label>
+      <select id="boardSize">
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+      </select>
+      <label for="aiToggle">Play vs Computer:</label>
+      <input type="checkbox" id="aiToggle" />
+      <button id="themeToggle">🌙/☀️</button>
+    </div>
+    <div class="scoreboard">
+      <span id="scoreX">X: 0</span>
+      <span id="scoreO">O: 0</span>
+      <span id="scoreDraw">Draws: 0</span>
+    </div>
+    <div id="status">Player X's Turn</div>
+    <div class="board" id="board">
+      <!-- Cells will be generated dynamically -->
+    </div>
+    <div class="game-buttons">
+      <button id="undoBtn">Undo</button>
+      <button id="redoBtn">Redo</button>
+      <button id="restartBtn">Restart Game</button>
+    </div>
+  </div>
+  <audio id="moveSound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae0b2.mp3"></audio>
+  <audio id="winSound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae0b2.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
